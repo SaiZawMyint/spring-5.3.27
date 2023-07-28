@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+    <!-- Tiles configuration -->
+    <bean id="viewResolver"
+        class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name="order" value="0" />
+        <property name="viewClass"
+            value="org.springframework.web.servlet.view.tiles3.TilesView" />
+    </bean>
+    <bean id="tilesConfigurer"
+        class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+        <property name="definitions">
+            <list>
+                <value>/WEB-INF/layout/layouts.xml</value>
+                <value>/WEB-INF/layout/applications/views-dashboard.xml</value>
+                <value>/WEB-INF/layout/guest/guest-layout.xml</value>
+                <value>/WEB-INF/layout/user/user-layout.xml</value>
+            </list>
+        </property>
+    </bean>
+</beans>
